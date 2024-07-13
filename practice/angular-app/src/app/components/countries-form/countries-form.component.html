@@ -1,0 +1,13 @@
+<input />
+
+
+<select
+  [value]="filterType"
+  (change)="onFilterTypeChange($event)"
+  class="border h-7 mt-1"
+>
+
+  @for (filterType of filterOptions; track filterType) {
+      <option [value]="filterType.value">{{ filterType.label }}</option>
+  }
+</select>

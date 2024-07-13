@@ -1,0 +1,4 @@
+<app-countries-form [filterOptions]="filterOptions" (filterChanged$)="setActiveFilter($event)"></app-countries-form>
+<button (click)="increment()">Increment</button>
+
+<p *ngIf="characters().length">{{characters()[0].name.common}}</p>
