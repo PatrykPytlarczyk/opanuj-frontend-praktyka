@@ -28,7 +28,6 @@ afterEach(() => {
 describe('Counter', () => {
   test('should render counter', async () => {
     await render(CounterComponent, {
-      excludeComponentDeclaration: true,
       componentProperties: {counter: 5},
     })
 
@@ -37,7 +36,6 @@ describe('Counter', () => {
 
   test('should increment the counter on click', async () => {
     await render(CounterComponent, {
-      excludeComponentDeclaration: true,
       componentProperties: {counter: 5},
     })
 
