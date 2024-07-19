@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { URLs } from '../utils/constants';
+import { getSearchingTermResultPageUrl } from '../utils/getSearchingTermResultPageUrl.function';
 
 export class SearchQuestionsPage {
   private readonly page: Page;
@@ -18,7 +18,7 @@ export class SearchQuestionsPage {
     await this.searchInput.fill(term)
     await this.searchButton.click()
 
-    return this.page.waitForURL(URLs.getSearchingTermResultPageUrl(term))
+    return this.page.waitForURL(getSearchingTermResultPageUrl(term))
   }
 
 
