@@ -11,7 +11,7 @@ export class MainPage {
   constructor(page: Page) {
     this.page = page;
     this.navigation = page.getByRole('navigation', {
-      name: 'Personal tools',
+      name: 'Personal tools'
     });
 
     this.featuredArticleExcerpt = page.locator('#mp-tfa');
@@ -27,6 +27,18 @@ export class MainPage {
 
   goToLoginPage() {
     return this.navigation.getByRole('link', { name: 'Log in' }).click();
+  }
+
+  async goToCommunityPortalPage() {
+    const communityPortalLink = this.page
+      .locator('#vector-main-menu-pinned-container')
+      .getByRole('link', { name: 'Community portal' });
+
+    const communityPortalLinkHref = await communityPortalLink.getAttribute('href');
+
+    await communityPortalLink.click();
+
+    return this.page.waitForURL(`**${communityPortalLinkHref}`);
   }
 
   async goToFeaturedArticle() {
