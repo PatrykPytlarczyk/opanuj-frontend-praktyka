@@ -17,10 +17,10 @@ test('search question from frequently asked questions', async ({ page }) => {
   const searchingTerm = 'watchlist';
   await helpDeskPage.searchQuestionAroundFAQ(searchingTerm);
 
-  const searchedValueResultsPage = new SearchedValuePage(page);
-  const allItemsIncludesTerm = await searchedValueResultsPage.everyListItemIncludesTerm(searchingTerm);
+  const searchedValuePage = new SearchedValuePage(page);
+  const allItemsIncludesTerm = await searchedValuePage.everyListItemIncludesTerm(searchingTerm);
 
-  await expect(searchedValueResultsPage.getInput()).toHaveValue(searchingTerm);
+  await expect(searchedValuePage.getInput()).toHaveValue(searchingTerm);
   await expect(allItemsIncludesTerm).toBeTruthy();
 
 
