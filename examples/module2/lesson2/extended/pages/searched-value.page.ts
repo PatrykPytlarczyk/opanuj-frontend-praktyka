@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 
-export class ResultsListPage {
+export class SearchedValuePage {
   private readonly page: Page;
   private readonly input: Locator;
   private readonly resultsList: Locator;

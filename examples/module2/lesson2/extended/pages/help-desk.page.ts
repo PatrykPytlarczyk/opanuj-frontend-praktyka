@@ -1,7 +1,7 @@
 import { Locator, Page } from '@playwright/test';
 import { getSearchingTermResultPageUrl } from '../utils/getSearchingTermResultPageUrl.function';
 
-export class SearchQuestionsPage {
+export class HelpDeskPage {
   private readonly page: Page;
   private searchInput: Locator;
   private searchButton: Locator;
