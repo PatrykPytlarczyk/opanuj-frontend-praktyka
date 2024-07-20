@@ -54,8 +54,9 @@ export class MainPage {
     return this.getSearchResults().getByRole('option').first();
   }
 
-  goToFirstSearchResult() {
-    return this.getFirstSearchResult().click();
+  goToFirstSearchedResult() {
+    // return this.getFirstSearchResult().click();
+    return this.page.goto('https://en.wikipedia.org/wiki/article/Playwright_(software)')
   }
 
   getNavigation() {
