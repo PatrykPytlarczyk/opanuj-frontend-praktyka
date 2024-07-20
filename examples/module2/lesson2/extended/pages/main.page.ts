@@ -54,6 +54,10 @@ export class MainPage {
     return this.getSearchResults().getByRole('option').first();
   }
 
+  goToFirstSearchResult() {
+    return this.getFirstSearchResult().click();
+  }
+
   getNavigation() {
     return this.navigation;
   }
