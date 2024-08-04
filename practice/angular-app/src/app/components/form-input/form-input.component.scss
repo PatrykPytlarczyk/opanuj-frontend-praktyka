@@ -1,0 +1,53 @@
+div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #e74c3c;
+}
+
+small {
+  color: #e74c3c;
+  display: block;
+  margin-top: 4px;
+}div {
+   margin-bottom: 16px;
+ }
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #e74c3c;
+}
+
+small {
+  color: #e74c3c;
+  display: block;
+  margin-top: 4px;
+}
