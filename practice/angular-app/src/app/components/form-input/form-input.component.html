@@ -1,0 +1,10 @@
+<div>
+  <label for="{{label}}">{{ label }}</label>
+  <input id="{{label}}" [formControl]="control"  aria-describedby="username-validation" />
+  <div *ngIf="control.invalid && control.touched" id="username-validation" aria-live="polite">
+    <small *ngIf="control.errors['required']">{{ label }} jest wymagane.</small>
+    <small *ngIf="control.errors['minlength'] as error">{{ label }} musi mieć co najmniej {{error.requiredLength}} znaki.</small>
+    <small *ngIf="control.errors['pattern']">{{ label }} posiada niepoprawną formę.</small>
+    <small *ngIf="control.errors['email']">{{ label }} posiada niepoprawną formę.</small>
+  </div>
+</div>

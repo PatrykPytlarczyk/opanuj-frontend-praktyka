@@ -1,0 +1,22 @@
+<div class="switch__label" tabindex="0" #switchContainer (click)="setSwitchState()">
+  <label class="switch__text" [for]="label">
+    {{label}}
+  </label>
+
+  <input
+    class="switch__input"
+    type="checkbox"
+    aria-describedby="switch-validation"
+    [name]="label"
+    [id]="label"
+    [formControl]="control"
+    (change)="onChange($event)"
+    #switchInput
+  />
+
+  <span class="switch__slider"></span>
+</div>
+
+<div *ngIf="control.invalid && control.touched">
+  <small id="switch-validation">{{label}} jest wymagana.</small>
+</div>
