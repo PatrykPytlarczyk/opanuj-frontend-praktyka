@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LocationWeather } from '../models/LocationWeather';
+import { LocationWeather, USLocationWeather } from '../models/LocationWeather';
 import { parseLocation } from './LocationParser';
 import { WeatherRequest } from '../models/WeatherRequest';
 
@@ -15,7 +15,7 @@ async function getWeatherData(
 
 export async function fetchWeather(
   locationQuery: string
-): Promise<LocationWeather | null> {
+): Promise<LocationWeather| USLocationWeather | null> {
   const request = parseLocation(locationQuery);
 
   if (!request) {
