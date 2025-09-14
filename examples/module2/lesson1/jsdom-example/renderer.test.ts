@@ -6,7 +6,7 @@ import { renderItems } from './renderer';
 const users: User[] = [
   { id: 1, name: 'John', age: 30, role: 'user' },
   { id: 2, name: 'Jane', age: 25, role: 'admin' },
-  { id: 3, name: 'Jack', age: 40, role: 'user' },
+  { id: 3, name: 'Jack', age: 40, role: 'user' }
 ];
 
 describe('User renderer', () => {
@@ -15,7 +15,16 @@ describe('User renderer', () => {
 
     const container = document.createElement('div');
     renderItems(container, users);
-    expect(Array.from(container.querySelectorAll('li'))).toHaveLength(3);
+    const listItemsArray = Array.from(container.querySelectorAll('li'));
+
+    expect(listItemsArray).toHaveLength(3);
+    listItemsArray.forEach((item, index) => {
+      const { name, age, role } = users[index];
+
+      expect(item.textContent).toContain(name);
+      expect(item.textContent).toContain(age);
+      expect(item.textContent).toContain(role === 'admin' && '(Admin)');
+    });
   });
 
   test('should render only regular users if non-admin is rendering the list', () => {
@@ -23,6 +32,13 @@ describe('User renderer', () => {
 
     const container = document.createElement('div');
     renderItems(container, users);
-    expect(Array.from(container.querySelectorAll('li'))).toHaveLength(2);
+    const listItemsArray = Array.from(container.querySelectorAll('li'));
+    const usersForUserRole = users.filter(user => user.role == 'user');
+
+    expect(listItemsArray).toHaveLength(2);
+    listItemsArray.forEach((item, index) => {
+      expect(item.textContent).toContain(usersForUserRole[index].name);
+      expect(item.textContent).toContain(usersForUserRole[index].age);
+    });
   });
 });

@@ -13,8 +13,10 @@ function filterUsers(users: User[]): User[] {
 }
 
 export function renderItems(container: HTMLElement, users: User[]): void {
+  //filtr userow - userRole == admin ma dostep do wszystkich userow, userRole == user ma dostep tylko do userow z rola 'user'
   const allowedUsers = filterUsers(users);
 
+  //renderowanie userow do ktorych ma dostep uzytkownik
   container.innerHTML = `
     <ul>
       ${allowedUsers
