@@ -54,6 +54,11 @@ export class MainPage {
     return this.getSearchResults().getByRole('option').first();
   }
 
+  goToFirstSearchedResult() {
+    // return this.getFirstSearchResult().click();
+    return this.page.goto('https://en.wikipedia.org/wiki/article/Playwright_(software)')
+  }
+
   getNavigation() {
     return this.navigation;
   }
